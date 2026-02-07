@@ -1,5 +1,5 @@
 {
-    "name": "arieo.engine.interface.archive",
+    "name": "ArieoEngine-Interface-Archive",
     "description": "Archive interface for engine",
     "build_commands":
     [

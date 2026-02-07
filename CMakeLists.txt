@@ -11,8 +11,8 @@ arieo_engine_project(
     PROJECT_TYPE interface
     PUBLIC_INCLUDE_FOLDERS
         ${CMAKE_CURRENT_SOURCE_DIR}/public/include
-    LIBS
-        arieo::base
+    PACKAGES
+        arieo_core
     AST_GENERATE_FOLDER
         ${CMAKE_CURRENT_SOURCE_DIR}/_generated/ast
     NATIVE_CODE_GENERATE_FOLDER

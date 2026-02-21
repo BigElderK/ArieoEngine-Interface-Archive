@@ -1,9 +1,15 @@
 cmake_minimum_required (VERSION 3.31)
 
 include($ENV{ARIEO_BUILD_ENV_PACKAGES_OUTPUT_DIR}/cmake/build_environment.cmake)
-project(ArieoEngine)
 
-arieo_engine_project(
+ARIEO_PACKAGE(
+    Arieo-Interface-Archive
+    CATEGORY 02_engine
+    COMPONENTS
+        arieo_archive_interface
+)
+
+ARIEO_ENGINE_PROJECT(
     arieo_archive_interface
     PROJECT_TYPE interface
 

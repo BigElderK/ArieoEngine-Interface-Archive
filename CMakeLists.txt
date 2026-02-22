@@ -17,7 +17,7 @@ ARIEO_ENGINE_PROJECT(
     DEPENDENCIES
         ARIEO_PACKAGES
             Arieo-Core
-        INTERFACES
+        INTERFACE_LIBS
             Arieo-Core::arieo_core
 
     SOURCES

@@ -1,4 +1,5 @@
 #pragma once
+#include "base/interface/interface.h"
 #include <filesystem>
 #include <tuple>
 namespace Arieo::Interface::Archive
@@ -12,7 +13,7 @@ namespace Arieo::Interface::Archive
     class IArchiveManager
     {
     public:
-        virtual IArchive* createArchive(const std::filesystem::path& root_path) = 0;
-        virtual void destroyArchive(IArchive*) = 0;
+        virtual Base::Interface<IArchive> createArchive(const std::filesystem::path& root_path) = 0;
+        virtual void destroyArchive(Base::Interface<IArchive>) = 0;
     };
 }

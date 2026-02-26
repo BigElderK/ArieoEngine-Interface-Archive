@@ -3,16 +3,18 @@
 
 namespace Arieo::Interface::Archive
 {
-    struct FileBuffer
+    class IFileBuffer
     {
-        void* buffer = nullptr;
-        size_t size = 0;
+    public:
+        virtual void* getBuffer() = 0;
+        virtual size_t getBufferSize() = 0;
     };
 
     class IArchive
     {
     public:
-        virtual FileBuffer getFileBuffer(const Base::Parameter::String& relative_path) = 0;
+        virtual Base::Interface<IFileBuffer> aquireFileBuffer(const Base::Parameter::String& relative_path) = 0;
+        virtual void releaseFileBuffer(Base::Interface<IFileBuffer> file_buffer) = 0;
     };
 
     class IArchiveManager

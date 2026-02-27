@@ -13,14 +13,14 @@ namespace Arieo::Interface::Archive
     class IArchive
     {
     public:
-        virtual Base::Interface<IFileBuffer> aquireFileBuffer(const Base::Parameter::String& relative_path) = 0;
-        virtual void releaseFileBuffer(Base::Interface<IFileBuffer> file_buffer) = 0;
+        virtual Base::Interop<IFileBuffer> aquireFileBuffer(const Base::Interop<std::string_view>& relative_path) = 0;
+        virtual void releaseFileBuffer(Base::Interop<IFileBuffer> file_buffer) = 0;
     };
 
     class IArchiveManager
     {
     public:
-        virtual Base::Interface<IArchive> createArchive(const Base::Parameter::String& root_path) = 0;
-        virtual void destroyArchive(Base::Interface<IArchive>) = 0;
+        virtual Base::Interop<IArchive> createArchive(const Base::Interop<std::string_view>& root_path) = 0;
+        virtual void destroyArchive(Base::Interop<IArchive>) = 0;
     };
 }
